@@ -27,7 +27,7 @@ hand-produce narration.
 | 4 | `scale-bottlenecks` | Scale Measured Bottlenecks | 9 — authored |
 | 5 | `distributed-correctness` | Reason About Distributed Correctness | 11 — authored |
 | 6 | `async-processing` | Design Asynchronous Processing | 9 — authored |
-| 7 | — | Define Service Boundaries and Evolve Architecture | 6 |
+| 7 | `service-boundaries` | Define Service Boundaries and Evolve Architecture | 6 — authored |
 | 8 | — | Operate, Secure, and Recover Systems | 11 |
 | 9 | — | Integrate and Critique Complete Designs | 5 |
 

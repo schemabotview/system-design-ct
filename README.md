@@ -26,7 +26,8 @@ Routes are `#/<course>-<section>`, e.g. `#/frame-the-problem-estimate-demand`.
 | 4 | `scale-bottlenecks` | 9 of 9 | Authored — slides, scenes and narration text. **Narration wavs not generated.** |
 | 5 | `distributed-correctness` | 11 of 11 | Authored — slides, scenes and narration text. **Narration wavs not generated.** |
 | 6 | `async-processing` | 9 of 9 | Authored — slides, scenes and narration text. **Narration wavs not generated.** |
-| 7–9 | — | 0 of 6, 11, 5 | Not started |
+| 7 | `service-boundaries` | 6 of 6 | Authored — slides, scenes and narration text. **Narration wavs not generated.** |
+| 8–9 | — | 0 of 11, 5 | Not started |
 
 Section counts follow the plan (6, 9, 9, 9, 11, 9, 6, 11, 5 = 75 sections).
 
@@ -151,4 +152,17 @@ The plan states what is and is not verified. Carried forward here so authoring d
   atomic rollback but is not a complete payment design (Chapter 9 revisits payments).
 - **Density exceptions:** `partitions-and-groups` slide renders at 79 % and `poison-messages` scene
   fills 0.54 (targets 80 % / 0.55).
+
+### Chapter 7 review notes
+
+- Availability of a synchronous chain is the product of the parts: 0.999⁴ = 0.996006 ≈ 99.6 %, which
+  misses chapter 1's assumed 99.9 % target. The per-service 99.9 % is an assumption, and the product
+  assumes independent failures.
+- The lesson retains the modular monolith on assumed evidence (one team, 231/s average, 1,157/s peak,
+  asynchronous click processing). It deliberately does not argue that services are never right; the
+  decision record names the triggers for revisiting.
+- Bounded context, cohesion/coupling, CQRS and event sourcing are explained at an introductory level
+  in plain terms (not tied to a specific book's wording). The Lewis/Fowler microservices article cited
+  by the plan was not fetched this session (web fetches were blocked), so no claim is attributed to it.
+- Expand-and-contract and the strangler-style "route a slice first" idea are described conceptually.
 
