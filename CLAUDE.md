@@ -29,7 +29,7 @@ hand-produce narration.
 | 6 | `async-processing` | Design Asynchronous Processing | 9 — authored |
 | 7 | `service-boundaries` | Define Service Boundaries and Evolve Architecture | 6 — authored |
 | 8 | `operate-and-recover` | Operate, Secure, and Recover Systems | 11 — authored |
-| 9 | — | Integrate and Critique Complete Designs | 5 |
+| 9 | `integrate-and-critique` | Integrate and Critique Complete Designs | 5 — authored |
 
 Teaching method per section (from the plan): objective → mental model → worked diagram, calculation,
 API example or timeline → alternative/failure contrast → summary → bridge.

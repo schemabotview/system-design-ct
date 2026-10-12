@@ -18,6 +18,8 @@ Routes are `#/<course>-<section>`, e.g. `#/frame-the-problem-estimate-demand`.
 
 ## Status
 
+**All nine chapters are authored (75 of 75 sections).** What remains is review, source verification, audio, and any extensions listed below.
+
 | # | Course id | Sections | State |
 | --- | --- | --- | --- |
 | 1 | `frame-the-problem` | 6 of 6 | Authored — slides, scenes and narration text. **Narration wavs not generated.** |
@@ -28,7 +30,7 @@ Routes are `#/<course>-<section>`, e.g. `#/frame-the-problem-estimate-demand`.
 | 6 | `async-processing` | 9 of 9 | Authored — slides, scenes and narration text. **Narration wavs not generated.** |
 | 7 | `service-boundaries` | 6 of 6 | Authored — slides, scenes and narration text. **Narration wavs not generated.** |
 | 8 | `operate-and-recover` | 11 of 11 | Authored — slides, scenes and narration text. **Narration wavs not generated.** |
-| 9 | — | 0 of 5 | Not started |
+| 9 | `integrate-and-critique` | 5 of 5 | Authored — slides, scenes and narration text. **Narration wavs not generated.** |
 
 Section counts follow the plan (6, 9, 9, 9, 11, 9, 6, 11, 5 = 75 sections).
 
@@ -190,4 +192,25 @@ The plan states what is and is not verified. Carried forward here so authoring d
   assessment.
 - **Density note:** `threat-model` scene fills 0.50 and `worked-incident` 0.52 of their panes (target
   ≥ 0.55); `slis-slos` is 0.62.
+
+### Chapter 9 review notes
+
+- **Plan compression to confirm.** The plan asks for end-to-end narrated designs of chat, feeds, file
+  storage and payments, *each* stating requirements, API/data examples, estimates, architecture,
+  bottleneck, failure behaviour, alternatives and cost — inside a 5-section chapter. One slide plus one
+  scene per section cannot hold four full designs, so section 3 gives a contrasting comparison
+  (dominant need, bottleneck, key decision, per case with estimates) and section 4 works **one** design,
+  file storage, through the whole method. If the full four-design treatment is wanted, the clean fix is
+  to split section 3 into four sections (chat, feed, file storage, payments) and let section 4 become
+  an integrated design of a *different* system; that changes the plan's section count for this chapter.
+- Estimates, all assumed: chat 10 M users × 40 messages = 400 M/day ≈ 4,630/s; feed 20 M users × 10 loads
+  = 200 M/day ≈ 2,315/s; files 1 M uploads × 5 MB = 5 TB/day ≈ 58 MB/s ≈ 1.8 PB/year (5 TB × 365 =
+  1,825 TB); storage at an assumed $0.02 per GB-month → 1,825,000 GB × $0.02 ≈ $36,500/month; payments
+  100,000/day ≈ 1.2/s. The price is a placeholder, not a quote from any provider.
+- Changed-requirements case: 200 M redirects/day ÷ 86,400 ≈ 2,315/s average, × 5 ≈ 11,574/s peak; at an
+  80 % hit rate ≈ 2,315 database reads/s (ten times chapter 4's 231). The 5-second takedown and 10×
+  growth are assumed.
+- The 35-day backup-retention figure in the critique is an assumption.
+- The closing bridge repeats the plan's caution: practical competence needs implementation experience
+  beyond this course.
 

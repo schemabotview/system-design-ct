@@ -6,6 +6,7 @@ import { distributedCorrectness } from './distributed-correctness'
 import { asyncProcessing } from './async-processing'
 import { serviceBoundaries } from './service-boundaries'
 import { operateAndRecover } from './operate-and-recover'
+import { integrateAndCritique } from './integrate-and-critique'
 import type { Course, Section } from './types'
 
 // Course registry, in syllabus order. Courses are added here as each is authored.
@@ -18,6 +19,7 @@ export const COURSES: Record<string, Course> = {
   [asyncProcessing.id]: asyncProcessing,
   [serviceBoundaries.id]: serviceBoundaries,
   [operateAndRecover.id]: operateAndRecover,
+  [integrateAndCritique.id]: integrateAndCritique,
 }
 
 export type { Course, Section }

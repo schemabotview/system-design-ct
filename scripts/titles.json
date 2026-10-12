@@ -7,5 +7,6 @@
   "distributed-correctness": "Distributed Systems Explained: Consistency, CAP, Quorums, Raft and Two-Phase Commit",
   "async-processing": "Message Queues and Event Streams Explained: Retries, Dead Letters and Idempotent Consumers",
   "service-boundaries": "Monolith vs Microservices: How to Draw Service Boundaries and Evolve Safely",
-  "operate-and-recover": "SLOs, Rate Limiting, Canary Deploys and Disaster Recovery: Running Systems Safely"
+  "operate-and-recover": "SLOs, Rate Limiting, Canary Deploys and Disaster Recovery: Running Systems Safely",
+  "integrate-and-critique": "System Design Interview Method: Design Chat, News Feed, File Storage and Payments"
 }
