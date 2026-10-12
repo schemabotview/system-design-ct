@@ -64,8 +64,11 @@ API example or timeline → alternative/failure contrast → summary → bridge.
 npm run build && npx tsc --noEmit && npm run check
 ```
 
-A floor, not proof. Review each route in the browser, including slide height (aim 80–95 % of the
-pane; the model caps at 1000px) and scene fill. `check` only requires wavs for a course once that
+A floor, not proof. Review each route in the browser, and **measure** — do not eyeball — both
+density targets: slide height 80–95 % of the 1080px pane (read it in a 1920×1080 render as the
+distance from the first to the last child of `.slide-panel__scaler`; `check` models it and caps at
+1000px, which is stricter than the render) and scene fill. Chapter 1's first pass shipped four slides
+at 70–78 % because this was only eyeballed; add real teaching content, not padding, to raise one. `check` only requires wavs for a course once that
 course has its first wav, so an unrecorded course does not fail it.
 
 ## Working agreement
