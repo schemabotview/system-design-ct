@@ -1,0 +1,8 @@
+/* This repo's whole design surface — the three tokens @graphlearning/shell leaves to the repo.
+   Imported AFTER the shell's stylesheet in main.tsx, so these win the cascade.
+   --brand is a system-design blue; --accent-2 is the amber counter tone. */
+:root {
+  --brand: #2f7de1; /* the subject's identity colour */
+  --brand-hover: #6da4ea; /* a lighter tint — the eyebrow's hover state */
+  --accent-2: #fbbf24; /* the counter tone — the slide's `###` subheading */
+}
