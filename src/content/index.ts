@@ -2,6 +2,7 @@ import { frameTheProblem } from './frame-the-problem'
 import { traceRequests } from './trace-requests'
 import { modelAndStoreData } from './model-and-store-data'
 import { scaleBottlenecks } from './scale-bottlenecks'
+import { distributedCorrectness } from './distributed-correctness'
 import type { Course, Section } from './types'
 
 // Course registry, in syllabus order. Courses are added here as each is authored.
@@ -10,6 +11,7 @@ export const COURSES: Record<string, Course> = {
   [traceRequests.id]: traceRequests,
   [modelAndStoreData.id]: modelAndStoreData,
   [scaleBottlenecks.id]: scaleBottlenecks,
+  [distributedCorrectness.id]: distributedCorrectness,
 }
 
 export type { Course, Section }

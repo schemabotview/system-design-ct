@@ -25,7 +25,7 @@ hand-produce narration.
 | 2 | `trace-requests` | Trace Requests and Design Communication | 9 — authored |
 | 3 | `model-and-store-data` | Model and Store Data Correctly | 9 — authored |
 | 4 | `scale-bottlenecks` | Scale Measured Bottlenecks | 9 — authored |
-| 5 | — | Reason About Distributed Correctness | 11 |
+| 5 | `distributed-correctness` | Reason About Distributed Correctness | 11 — authored |
 | 6 | — | Design Asynchronous Processing | 9 |
 | 7 | — | Define Service Boundaries and Evolve Architecture | 6 |
 | 8 | — | Operate, Secure, and Recover Systems | 11 |

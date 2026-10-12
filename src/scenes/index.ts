@@ -3,11 +3,12 @@ import { frameTheProblemScenes } from './frame-the-problem'
 import { traceRequestsScenes } from './trace-requests'
 import { modelAndStoreDataScenes } from './model-and-store-data'
 import { scaleBottlenecksScenes } from './scale-bottlenecks'
+import { distributedCorrectnessScenes } from './distributed-correctness'
 
 // Scene registry. Sections reference scenes by id; scenes are grouped by course (one folder each,
 // mirroring src/content). Ids are globally unique across courses, so the flat lookup below is
 // unambiguous. Courses are added here as each is authored.
-const ALL: Scene[] = [...frameTheProblemScenes, ...traceRequestsScenes, ...modelAndStoreDataScenes, ...scaleBottlenecksScenes]
+const ALL: Scene[] = [...frameTheProblemScenes, ...traceRequestsScenes, ...modelAndStoreDataScenes, ...scaleBottlenecksScenes, ...distributedCorrectnessScenes]
 
 export const SCENES: Record<string, Scene> = Object.fromEntries(ALL.map((s) => [s.id, s]))
 

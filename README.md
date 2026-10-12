@@ -24,7 +24,8 @@ Routes are `#/<course>-<section>`, e.g. `#/frame-the-problem-estimate-demand`.
 | 2 | `trace-requests` | 9 of 9 | Authored — slides, scenes and narration text. **Narration wavs not generated.** |
 | 3 | `model-and-store-data` | 9 of 9 | Authored — slides, scenes and narration text. **Narration wavs not generated.** |
 | 4 | `scale-bottlenecks` | 9 of 9 | Authored — slides, scenes and narration text. **Narration wavs not generated.** |
-| 5–9 | — | 0 of 11, 9, 6, 11, 5 | Not started |
+| 5 | `distributed-correctness` | 11 of 11 | Authored — slides, scenes and narration text. **Narration wavs not generated.** |
+| 6–9 | — | 0 of 9, 6, 11, 5 | Not started |
 
 Section counts follow the plan (6, 9, 9, 9, 11, 9, 6, 11, 5 = 75 sections).
 
@@ -114,4 +115,23 @@ The plan states what is and is not verified. Carried forward here so authoring d
 - **Density exceptions:** `cache-placement` slide renders at 79 % (one point under the 80 % target; the
   check model's 1000 px cap prevented adding another line) and the `rebalancing` scene fills 0.53 of
   its pane (target ≥ 0.55).
+
+### Chapter 5 review notes
+
+- **Source verification was attempted and mostly blocked.** WebFetch could not reach `raft.github.io`,
+  the Gilbert–Lynch PDF or Abadi's PACELC paper (DNS denied by the environment's network policy).
+  One web search returned secondary summaries agreeing with the PACELC statement used here
+  (partition → availability or consistency; else → latency or consistency, Abadi, 2012). **CAP, Raft,
+  quorum, Lamport-clock, isolation-level and two-phase-commit statements were written from general
+  knowledge and not re-read against primary text.** The plan's open item "PACELC … need further
+  primary-source verification" is therefore *not* closed; the lesson presents PACELC as a lens, names
+  Abadi, and does not label real products.
+- CAP is stated in the Gilbert–Lynch model (linearizable consistency, availability of every request to a
+  non-failing node, partition tolerance) and the lesson avoids "pick two of three" except to criticise it.
+- Raft is a *conceptual* sketch on three servers (terms, majority votes, commit on majority, vote only
+  for an up-to-date log); it is explicitly not a specification.
+- The ±40 ms clock skew is an assumption. The 2PC "in doubt" blocking, outbox at-least-once duplicate
+  and the three inventory histories (lost update, stale replica read, failover lost write) are standard
+  textbook scenarios, each labelled by the axis that fails (isolation, replication, durability).
+- Section 2 table columns render right-aligned for text; readable but not pretty.
 
