@@ -23,7 +23,8 @@ Routes are `#/<course>-<section>`, e.g. `#/frame-the-problem-estimate-demand`.
 | 1 | `frame-the-problem` | 6 of 6 | Authored — slides, scenes and narration text. **Narration wavs not generated.** |
 | 2 | `trace-requests` | 9 of 9 | Authored — slides, scenes and narration text. **Narration wavs not generated.** |
 | 3 | `model-and-store-data` | 9 of 9 | Authored — slides, scenes and narration text. **Narration wavs not generated.** |
-| 4–9 | — | 0 of 9, 11, 9, 6, 11, 5 | Not started |
+| 4 | `scale-bottlenecks` | 9 of 9 | Authored — slides, scenes and narration text. **Narration wavs not generated.** |
+| 5–9 | — | 0 of 11, 9, 6, 11, 5 | Not started |
 
 Section counts follow the plan (6, 9, 9, 9, 11, 9, 6, 11, 5 = 75 sections).
 
@@ -93,4 +94,24 @@ The plan states what is and is not verified. Carried forward here so authoring d
   says so. Not checked against any product documentation.
 - Treatment of IP addresses as possibly personal data is deliberately jurisdiction-neutral; it is not
   legal guidance.
+
+### Chapter 4 review notes
+
+- **All load, hit-rate, lag, pool and capacity figures are assumed or supplied**: 10 ms service time,
+  80 % hit rate, 60 s TTL, 0.2–2 s replica lag, pool of 20 against a 100-connection limit, 4× traffic
+  growth, 4,000 click writes/s against ~1,500/s primary capacity. Stage 3 of the staged case is
+  supplied evidence, not a derivation from chapter 1's write rate (which is only ~2.3 creates/s).
+- Latency-vs-utilisation curve is the textbook M/M/1 response time, service time ÷ (1 − utilisation):
+  20 ms at 50 %, 50 ms at 80 %, 100 ms at 90 %, 200 ms at 95 %. A model for intuition, not a claim
+  about any real server.
+- Popularity skew is an assumed Zipf-like distribution over 50 links (share ∝ 1/rank, H₅₀ ≈ 4.499),
+  giving rank 1 ≈ 22.2 %. Illustrative.
+- Rebalancing arithmetic: a key keeps its shard under hash mod 4 → mod 5 only when the residues agree,
+  4 of every 20 hash values, so 20 % stay and 80 % move; 64 fixed partitions ÷ 5 nodes ≈ 13 partitions
+  ≈ 20 % move.
+- Write-through / write-around-style invalidation / write-back and cache-aside are described at the
+  conceptual level; product behaviour varies and was not checked against any cache's documentation.
+- **Density exceptions:** `cache-placement` slide renders at 79 % (one point under the 80 % target; the
+  check model's 1000 px cap prevented adding another line) and the `rebalancing` scene fills 0.53 of
+  its pane (target ≥ 0.55).
 

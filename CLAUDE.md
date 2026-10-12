@@ -24,7 +24,7 @@ hand-produce narration.
 | 1 | `frame-the-problem` | Frame the Problem and Explain an Initial Design | 6 — authored |
 | 2 | `trace-requests` | Trace Requests and Design Communication | 9 — authored |
 | 3 | `model-and-store-data` | Model and Store Data Correctly | 9 — authored |
-| 4 | — | Scale Measured Bottlenecks | 9 |
+| 4 | `scale-bottlenecks` | Scale Measured Bottlenecks | 9 — authored |
 | 5 | — | Reason About Distributed Correctness | 11 |
 | 6 | — | Design Asynchronous Processing | 9 |
 | 7 | — | Define Service Boundaries and Evolve Architecture | 6 |
@@ -54,6 +54,8 @@ API example or timeline → alternative/failure contrast → summary → bridge.
   built by a helper or template string are invisible to it and any `focus:` on them is rejected.
 - **`badge` is not rendered** by the installed `@graphlearning/flow` (1.3.0) — it belongs to the
   unreleased look. Put ordinals in labels instead.
+- **Wide rows shrink the type.** A container with many `cols` (e.g. 5 or 4 across) or a wide `LR` row
+  binds the scene on width and renders it small; restack to 2–3 columns or `TB` before adding content.
 - **Two-up grids:** a scene with `cols: 2` and no top-level edges lays containers out as a grid,
   which fills the pane far better than a wide `LR` row of the same containers.
 - **`icon:` names** — the 75 valid lucide keys (copy from here, not from lucide's catalogue):
