@@ -25,7 +25,8 @@ Routes are `#/<course>-<section>`, e.g. `#/frame-the-problem-estimate-demand`.
 | 3 | `model-and-store-data` | 9 of 9 | Authored — slides, scenes and narration text. **Narration wavs not generated.** |
 | 4 | `scale-bottlenecks` | 9 of 9 | Authored — slides, scenes and narration text. **Narration wavs not generated.** |
 | 5 | `distributed-correctness` | 11 of 11 | Authored — slides, scenes and narration text. **Narration wavs not generated.** |
-| 6–9 | — | 0 of 9, 6, 11, 5 | Not started |
+| 6 | `async-processing` | 9 of 9 | Authored — slides, scenes and narration text. **Narration wavs not generated.** |
+| 7–9 | — | 0 of 6, 11, 5 | Not started |
 
 Section counts follow the plan (6, 9, 9, 9, 11, 9, 6, 11, 5 = 75 sections).
 
@@ -134,4 +135,20 @@ The plan states what is and is not verified. Carried forward here so authoring d
   and the three inventory histories (lost update, stale replica read, failover lost write) are standard
   textbook scenarios, each labelled by the axis that fails (isolation, replication, durability).
 - Section 2 table columns render right-aligned for text; readable but not pretty.
+
+### Chapter 6 review notes
+
+- Backlog arithmetic (all rates assumed): 1,157/s arriving against 1,000/s service for 600 s leaves
+  157 × 600 = 94,200 queued; after arrival falls to 231/s the surplus is 769/s, so it drains in
+  94,200 ÷ 769 ≈ 122.5 s (empty at ≈ 722.5 s).
+- Retry limit (5), processed-id retention (7 days) and topic retention (7 days) are assumptions of the
+  lesson. Partition assignment of example codes is illustrative.
+- "Exactly-once" is deliberately scoped: the lesson says claims usually cover work inside one system
+  and do not extend to external effects. No specific broker's guarantees are described or checked.
+- The three-partition, consumer-group and offset model is generic; product terminology (e.g. which
+  systems delete on ack versus retain a log) was not verified against any product's documentation.
+- Saga/compensation content is conceptual; the payment example distinguishes compensation from
+  atomic rollback but is not a complete payment design (Chapter 9 revisits payments).
+- **Density exceptions:** `partitions-and-groups` slide renders at 79 % and `poison-messages` scene
+  fills 0.54 (targets 80 % / 0.55).
 

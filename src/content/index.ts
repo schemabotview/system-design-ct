@@ -3,6 +3,7 @@ import { traceRequests } from './trace-requests'
 import { modelAndStoreData } from './model-and-store-data'
 import { scaleBottlenecks } from './scale-bottlenecks'
 import { distributedCorrectness } from './distributed-correctness'
+import { asyncProcessing } from './async-processing'
 import type { Course, Section } from './types'
 
 // Course registry, in syllabus order. Courses are added here as each is authored.
@@ -12,6 +13,7 @@ export const COURSES: Record<string, Course> = {
   [modelAndStoreData.id]: modelAndStoreData,
   [scaleBottlenecks.id]: scaleBottlenecks,
   [distributedCorrectness.id]: distributedCorrectness,
+  [asyncProcessing.id]: asyncProcessing,
 }
 
 export type { Course, Section }
