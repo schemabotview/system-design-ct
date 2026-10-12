@@ -22,7 +22,7 @@ hand-produce narration.
 | # | Course id | Plan chapter | Sections |
 | --- | --- | --- | --- |
 | 1 | `frame-the-problem` | Frame the Problem and Explain an Initial Design | 6 — authored |
-| 2 | — | Trace Requests and Design Communication | 9 |
+| 2 | `trace-requests` | Trace Requests and Design Communication | 9 — authored |
 | 3 | — | Model and Store Data Correctly | 9 |
 | 4 | — | Scale Measured Bottlenecks | 9 |
 | 5 | — | Reason About Distributed Correctness | 11 |
@@ -50,6 +50,10 @@ API example or timeline → alternative/failure contrast → summary → bridge.
   plus `table`, `list` and `code` nodes for histories. Look at the route — edge labels can land on
   cards and `check` cannot see it.
 - **`plot` series `labelAt` is an absolute data coordinate, not an offset.**
+- **`badge` is not rendered** by the installed `@graphlearning/flow` (1.3.0) — it belongs to the
+  unreleased look. Put ordinals in labels instead.
+- **Two-up grids:** a scene with `cols: 2` and no top-level edges lays containers out as a grid,
+  which fills the pane far better than a wide `LR` row of the same containers.
 - **`icon:` names** — the 75 valid lucide keys (copy from here, not from lucide's catalogue):
   `monitor terminal code filecode cloud building braces cpu layers globe database network wrench
   receipt tag gauge bell key shieldcheck usercheck scanface scroll gitbranch ban circlecheck

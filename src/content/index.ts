@@ -1,9 +1,11 @@
 import { frameTheProblem } from './frame-the-problem'
+import { traceRequests } from './trace-requests'
 import type { Course, Section } from './types'
 
 // Course registry, in syllabus order. Courses are added here as each is authored.
 export const COURSES: Record<string, Course> = {
   [frameTheProblem.id]: frameTheProblem,
+  [traceRequests.id]: traceRequests,
 }
 
 export type { Course, Section }

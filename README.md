@@ -21,7 +21,8 @@ Routes are `#/<course>-<section>`, e.g. `#/frame-the-problem-estimate-demand`.
 | # | Course id | Sections | State |
 | --- | --- | --- | --- |
 | 1 | `frame-the-problem` | 6 of 6 | Authored — slides, scenes and narration text. **Narration wavs not generated.** |
-| 2–9 | — | 0 of 9, 9, 9, 11, 9, 6, 11, 5 | Not started |
+| 2 | `trace-requests` | 9 of 9 | Authored — slides, scenes and narration text. **Narration wavs not generated.** |
+| 3–9 | — | 0 of 9, 9, 11, 9, 6, 11, 5 | Not started |
 
 Section counts follow the plan (6, 9, 9, 9, 11, 9, 6, 11, 5 = 75 sections).
 
@@ -59,3 +60,20 @@ The plan states what is and is not verified. Carried forward here so authoring d
   workload, flagged as assumed on the slide. Change or remove them if the plan should not carry them.
 - Quality targets (99% < 100 ms, 99.9%, 100 links/hour) are invented illustrative targets.
 - Status codes in the API sketch (201, 422, 302, 404) are a first pass; chapter 2 revisits them.
+
+### Chapter 2 review notes
+
+- **Standards claims were written from knowledge, not re-read against the source text this session.**
+  Verify before publishing: RFC 9110 on idempotent/safe methods (GET safe; PUT, DELETE idempotent;
+  POST not), on 301 being cacheable by default and 302 only with explicit freshness, and on the
+  name "422 Unprocessable Content"; RFC 9457 problem-details members (`type`, `title`, `status`,
+  `detail`; `field` is this API's own extension); TLS 1.3 needing one handshake round trip against
+  two for TLS 1.2; gRPC running over HTTP/2.
+- `Idempotency-Key` is presented as a widely used convention, not core HTTP. That is deliberate.
+- All timings (20/30/30/10 ms, 400 ms deadline, 150 ms timeout, 100 ms backoff base, 1,600 ms cap,
+  60 ms jitter draw, 24 h key expiry) are **hypothetical** and chosen to be internally consistent:
+  cold 120 ms, warm 40 ms; retry at t = 210 leaves 190 ms of a 400 ms deadline; replay at t = 250.
+- The 3× retry-amplification figure is the worst case for three attempts, not an expected value.
+- The AWS Builders' Library idempotency article and the AWS backoff-and-jitter guidance cited by the
+  plan were not fetched; the lesson states the ideas, not their wording.
+
