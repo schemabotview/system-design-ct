@@ -5,6 +5,7 @@ import { scaleBottlenecks } from './scale-bottlenecks'
 import { distributedCorrectness } from './distributed-correctness'
 import { asyncProcessing } from './async-processing'
 import { serviceBoundaries } from './service-boundaries'
+import { operateAndRecover } from './operate-and-recover'
 import type { Course, Section } from './types'
 
 // Course registry, in syllabus order. Courses are added here as each is authored.
@@ -16,6 +17,7 @@ export const COURSES: Record<string, Course> = {
   [distributedCorrectness.id]: distributedCorrectness,
   [asyncProcessing.id]: asyncProcessing,
   [serviceBoundaries.id]: serviceBoundaries,
+  [operateAndRecover.id]: operateAndRecover,
 }
 
 export type { Course, Section }

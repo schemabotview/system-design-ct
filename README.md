@@ -27,7 +27,8 @@ Routes are `#/<course>-<section>`, e.g. `#/frame-the-problem-estimate-demand`.
 | 5 | `distributed-correctness` | 11 of 11 | Authored — slides, scenes and narration text. **Narration wavs not generated.** |
 | 6 | `async-processing` | 9 of 9 | Authored — slides, scenes and narration text. **Narration wavs not generated.** |
 | 7 | `service-boundaries` | 6 of 6 | Authored — slides, scenes and narration text. **Narration wavs not generated.** |
-| 8–9 | — | 0 of 11, 5 | Not started |
+| 8 | `operate-and-recover` | 11 of 11 | Authored — slides, scenes and narration text. **Narration wavs not generated.** |
+| 9 | — | 0 of 5 | Not started |
 
 Section counts follow the plan (6, 9, 9, 9, 11, 9, 6, 11, 5 = 75 sections).
 
@@ -165,4 +166,28 @@ The plan states what is and is not verified. Carried forward here so authoring d
   in plain terms (not tied to a specific book's wording). The Lewis/Fowler microservices article cited
   by the plan was not fetched this session (web fetches were blocked), so no claim is attributed to it.
 - Expand-and-contract and the strangler-style "route a slice first" idea are described conceptually.
+
+### Chapter 8 review notes
+
+- **All operational figures are assumed or illustrative.** Error-budget arithmetic: 20 M redirects/day
+  × 30 days = 600 M valid requests; a 99.9 % SLO leaves 0.1 % = 600,000 failures; 150,000 failures →
+  SLI 99.975 %, 25 % of budget spent. Capacity margin: 1,157 ÷ 0.70 ≈ 1,653 req/s (the 70 % target
+  utilisation is an assumption informed by chapter 4's queueing intuition).
+- Token bucket: 100 creates/hour ÷ 3,600 s = one token per 36 s; capacity 10 → empty-to-full in 360 s.
+- Recovery options' RTO/RPO values (nightly backup 4 h / 24 h; replica 15 min / ~5 s; point-in-time
+  2 h / 5 min) are **assumptions standing in for drill results**, measured against an assumed
+  requirement of RTO 1 h and RPO 5 min. The combined option is shown as *still missing the RTO for the
+  mistake path*, deliberately.
+- Worked incident: 09:04–09:31 = 27 min = 1,620 s at the 231/s average ≈ 375,000 failed requests =
+  62.5 % of the 600,000 monthly budget (this uses the *average* rate; a busier hour would burn more).
+  Phases: 3 min to detect, 13 to find the cause, 11 to recover. Failover-does-not-help is the point
+  being made about faulty changes versus failed infrastructure.
+- The four threat-model questions and a STRIDE mention are standard framings; the OWASP Threat
+  Modeling Cheat Sheet cited by the plan was **not fetched** (web fetches blocked), so wording is the
+  course's own and not attributed to it. The SRE-book chapters were likewise not fetched; terms (SLI,
+  SLO, SLA, error budget) follow common usage.
+- Section 11 closes with the plan's requirement that operational examples stay distinct from learner
+  assessment.
+- **Density note:** `threat-model` scene fills 0.50 and `worked-incident` 0.52 of their panes (target
+  ≥ 0.55); `slis-slos` is 0.62.
 

@@ -28,7 +28,7 @@ hand-produce narration.
 | 5 | `distributed-correctness` | Reason About Distributed Correctness | 11 — authored |
 | 6 | `async-processing` | Design Asynchronous Processing | 9 — authored |
 | 7 | `service-boundaries` | Define Service Boundaries and Evolve Architecture | 6 — authored |
-| 8 | — | Operate, Secure, and Recover Systems | 11 |
+| 8 | `operate-and-recover` | Operate, Secure, and Recover Systems | 11 — authored |
 | 9 | — | Integrate and Critique Complete Designs | 5 |
 
 Teaching method per section (from the plan): objective → mental model → worked diagram, calculation,
