@@ -23,7 +23,7 @@ hand-produce narration.
 | --- | --- | --- | --- |
 | 1 | `frame-the-problem` | Frame the Problem and Explain an Initial Design | 6 — authored |
 | 2 | `trace-requests` | Trace Requests and Design Communication | 9 — authored |
-| 3 | — | Model and Store Data Correctly | 9 |
+| 3 | `model-and-store-data` | Model and Store Data Correctly | 9 — authored |
 | 4 | — | Scale Measured Bottlenecks | 9 |
 | 5 | — | Reason About Distributed Correctness | 11 |
 | 6 | — | Design Asynchronous Processing | 9 |
@@ -50,6 +50,8 @@ API example or timeline → alternative/failure contrast → summary → bridge.
   plus `table`, `list` and `code` nodes for histories. Look at the route — edge labels can land on
   cards and `check` cannot see it.
 - **`plot` series `labelAt` is an absolute data coordinate, not an offset.**
+- **Write node ids as literals** (`id: 'x',`). `check`'s focus guard reads them with a regex, so ids
+  built by a helper or template string are invisible to it and any `focus:` on them is rejected.
 - **`badge` is not rendered** by the installed `@graphlearning/flow` (1.3.0) — it belongs to the
   unreleased look. Put ordinals in labels instead.
 - **Two-up grids:** a scene with `cols: 2` and no top-level edges lays containers out as a grid,

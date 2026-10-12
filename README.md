@@ -22,7 +22,8 @@ Routes are `#/<course>-<section>`, e.g. `#/frame-the-problem-estimate-demand`.
 | --- | --- | --- | --- |
 | 1 | `frame-the-problem` | 6 of 6 | Authored — slides, scenes and narration text. **Narration wavs not generated.** |
 | 2 | `trace-requests` | 9 of 9 | Authored — slides, scenes and narration text. **Narration wavs not generated.** |
-| 3–9 | — | 0 of 9, 9, 11, 9, 6, 11, 5 | Not started |
+| 3 | `model-and-store-data` | 9 of 9 | Authored — slides, scenes and narration text. **Narration wavs not generated.** |
+| 4–9 | — | 0 of 9, 11, 9, 6, 11, 5 | Not started |
 
 Section counts follow the plan (6, 9, 9, 9, 11, 9, 6, 11, 5 = 75 sections).
 
@@ -76,4 +77,20 @@ The plan states what is and is not verified. Carried forward here so authoring d
 - The 3× retry-amplification figure is the worst case for three attempts, not an expected value.
 - The AWS Builders' Library idempotency article and the AWS backoff-and-jitter guidance cited by the
   plan were not fetched; the lesson states the ideas, not their wording.
+
+### Chapter 3 review notes
+
+- SQL is PostgreSQL-style and labelled as an assumed dialect on the scene. No query-plan output is
+  claimed as measured: the 8 s per-day click query and its sequential scan are explicitly *supplied*
+  hypothetical evidence for the exercise.
+- Collision arithmetic: 62⁶ = 56,800,235,584 codes; the chance a new random code is taken ≈ links
+  stored ÷ 62⁶ (1 M → 0.0018 %, 10 M → 0.018 %, 73 M → 0.13 %); 200,000 creates × 0.13 % ≈ 257 retries
+  a day. 73 M is chapter 1's assumed 200,000 links a day for a year.
+- Storage: 20 M redirects/day × an assumed 100 B per click row = 2 GB/day ≈ 730 GB/year.
+- The 2,048-character URL limit, 13-month click retention and the three-attempt retry cap are
+  assumptions of the lesson, not recommendations.
+- Storage-model comparisons describe typical tendencies; individual products differ, and the slide
+  says so. Not checked against any product documentation.
+- Treatment of IP addresses as possibly personal data is deliberately jurisdiction-neutral; it is not
+  legal guidance.
 
