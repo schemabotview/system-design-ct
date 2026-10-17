@@ -1,0 +1,51 @@
+{
+  "channelId": "UCo9qk2FZeoS79LHYYDln6Tw",
+  "verifiedAt": "2026-10-16",
+  "courses": {
+    "frame-the-problem": {
+      "videoId": "K-u84TNBzO0",
+      "publishedAt": "2026-10-16",
+      "visibility": "public"
+    },
+    "trace-requests": {
+      "videoId": "WUbIANQuz0s",
+      "publishedAt": "2026-10-16",
+      "visibility": "public"
+    },
+    "model-and-store-data": {
+      "videoId": "wX2itfmXyGM",
+      "publishedAt": "2026-10-16",
+      "visibility": "public"
+    },
+    "scale-bottlenecks": {
+      "videoId": "tVptZGJVlOw",
+      "publishedAt": "2026-10-16",
+      "visibility": "public"
+    },
+    "distributed-correctness": {
+      "videoId": "jBLeIs1RlEQ",
+      "publishedAt": "2026-10-16",
+      "visibility": "public"
+    },
+    "async-processing": {
+      "videoId": "CJmtALHPqnY",
+      "publishedAt": "2026-10-16",
+      "visibility": "public"
+    },
+    "service-boundaries": {
+      "videoId": "fUlaG94ufVo",
+      "publishedAt": "2026-10-16",
+      "visibility": "public"
+    },
+    "operate-and-recover": {
+      "videoId": "lWok3yyOREk",
+      "publishedAt": "2026-10-16",
+      "visibility": "public"
+    },
+    "integrate-and-critique": {
+      "videoId": "a4VGpOtAwXo",
+      "publishedAt": "2026-10-16",
+      "visibility": "public"
+    }
+  }
+}
